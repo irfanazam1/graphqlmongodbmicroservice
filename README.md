@@ -160,31 +160,27 @@ Optional - for debugging or extended the application.
 The following section describes the java code.
 
 ## Mongo Config
-```java
-@Configuration
-@EnableMongoRepositories(basePackages = { "graphql.demo", "graphql.demo.repository"  })
-public class MongoConfig  {
 
-    @Value("${db.host}")
-    private String databaseHost;
+Define the following properties in the application.properties
 
-    @Value("${db.port}")
-    private int databasePort;
-
-    @Value("${db.name}")
-    private String databaseName;
-
-    @Bean(name="mongoTemplate")
-    public MongoDbTemplate createTemplate(){
-        return new MongoDbTemplate(databaseHost,databasePort,databaseName);
-    }
-}
-
-public class MongoDbTemplate implements MongoOperations, IndexOperationsProvider, ApplicationContextAware {
- //See the class file for implementation .. this is a long java file.
-}
+```properties
+spring.data.mongodb.database=demo
+spring.data.mongodb.port=27017
+spring.data.mongodb.host=localhost
+```
+Add following dependencies in the POM file.
+```xml
+    <dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-data-mongodb</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.mongodb</groupId>
+		<artifactId>mongo-java-driver</artifactId>
+	</dependency>
 
 ```
+
 ## GraphQL setup
 
 Following steps are required to setup GraphQL
