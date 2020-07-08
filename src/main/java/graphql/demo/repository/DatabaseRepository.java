@@ -1,9 +1,9 @@
 package graphql.demo.repository;
 
-import graphql.demo.mongodb.MongoDbTemplate;
 import graphql.demo.model.Department;
 import graphql.demo.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Component;
@@ -13,8 +13,12 @@ import java.util.List;
 @Component
 public class DatabaseRepository {
 
+    /**
+     * Setting up the Springboot Mongodb starter and setting up the properties as defined in the application.properties
+     * will auto define the MongoTemplate bean, which can be used to query the database.
+     */
     @Autowired
-    private MongoDbTemplate mongoTemplate;
+    private MongoTemplate mongoTemplate;
 
     public List<Employee> findAllEmployees(){
         return mongoTemplate.find(new Query(), Employee.class);

@@ -6,17 +6,12 @@ import graphql.demo.repository.DatabaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration;
-import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@SpringBootApplication(exclude = {
-		MongoAutoConfiguration.class,
-		MongoDataAutoConfiguration.class
-})
+@SpringBootApplication
 public class DemoApplication {
 
 	@Autowired

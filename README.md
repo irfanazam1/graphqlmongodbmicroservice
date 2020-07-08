@@ -50,7 +50,7 @@ http://robot3t.com/en/
 #Technologies used
 ````
 - Java 8
-- Springboot2
+- Springboot
 - Springboot GraphQL WebMVC
 - Java MongoDB driver
 - Springboot MongoDB data
