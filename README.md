@@ -337,21 +337,6 @@ public class GraphQLDataFetchers {
 }
 ```
 
-## Properties
-
-```properties
-#Database name
-db.name=demo
-#Database host address. Localhost if the MongoDB is installed locally.
-db.host=localhost
-#Default mongoport. Change the port if MongoDB is not installed on the default port.
-db.port=27017
-#DB base package
-db.base=graphql
-#Tomcat port. Change the port if some other service is running locally on port 8080
-server.port=8080
-```
-
 ## Running Queries (GraphQL Playground)
 
 - Run the service like, java -jar target/graphqlmongoms-0.1-SNAPSHOT.jar or directly loading the project in 
